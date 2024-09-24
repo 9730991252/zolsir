@@ -12,16 +12,7 @@
 
 </div>
     <script>
-//var ws = new WebSocket('ws://127.0.0.1:8000/ws/sc/')
-//console.log(ws)
-
-const ws = new WebSocket(
-    'ws://'
-    + window.location.host
-    + '/ws/sc/'
-);
-console.log(ws)
-
+var ws = new WebSocket('ws://127.0.0.1:8000/ws/sc/')
 
 ws.onopen=function(){
     console.log('connection open..')
