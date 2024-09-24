@@ -21,8 +21,8 @@ ws.onmessage=function(event){
     const data = JSON.parse(event.data)
     document.querySelector('#chat_log').value +=(data.msg + '\n')
 }
-ws.onclose=function(){
-    console.log('connection close..')
+ws.onclose=function(event){
+    console.log('connection close..',event)
 }
 
 document.getElementById('chat_massege_submite').onclick = 
