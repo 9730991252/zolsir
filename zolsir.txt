@@ -2,6 +2,11 @@
 
 **********************************
 
+cd zolsir
+git pull
+sudo systemctl daemon-reload
+sudo systemctl restart zolchat.com.gunicorn
+exit
 
 _______________________________________
 
