@@ -70,8 +70,8 @@ TEMPLATES = [
     },
 ]
 
-#WSGI_APPLICATION = 'zolsir.wsgi.application'
-ASGI_APPLICATION = 'zolsir.asgi.application'
+WSGI_APPLICATION = 'zolsir.wsgi.application'
+ASGI_APPLICATION = 'zolsir.routing.application'
 
 
 # Database

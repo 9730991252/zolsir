@@ -177,3 +177,7 @@ sudo systemctl restart zolchat.com.gunicorn
 --------------------------------------- ssl ------------------
 
 sudo certbot --nginx
+
+
+********************old virsion *****************
+
