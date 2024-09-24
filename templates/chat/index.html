@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Chat Room</title>
+</head>
+<body>
+    <div class="container">
+    <textarea name="" id="chat_log" cols="100" rows="20"></textarea><br>
+    <input type="text" name="" id="chat_message_input" size="100"><br>
+    <input type="button" value="Send" id="chat_massege_submite">
+
+</div>
+    <script>
+var ws = new WebSocket('ws://127.0.0.1:8000/ws/sc/')
+ws.onopen=function(){
+    console.log('connection open..')
+    //ws.send('hi from client')
+}
+ws.onmessage=function(event){
+    const data = JSON.parse(event.data)
+    document.querySelector('#chat_log').value +=(data.msg + '\n')
+}
+ws.onclose=function(){
+    console.log('connection close..')
+}
+
+document.getElementById('chat_massege_submite').onclick = 
+function (event){
+    const messageInputDom = document.getElementById('chat_message_input')
+    const message = messageInputDom.value
+    ws.send(JSON.stringify({
+        'msg':message
+    }))
+    messageInputDom.value = ''
+}
+    </script>
+</body>
+</html>
